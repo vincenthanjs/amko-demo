@@ -1,0 +1,13 @@
+apiVersion: amko.vmware.com/v1alpha1
+kind: GSLBHostRule
+metadata:
+  name: gslbhostrule
+spec:
+  fqdn: hello.apps.lab01.one
+  trafficSplit:
+  - cluster: ocp-east-admin
+    weight: 4
+  - cluster: ocp-west-admin
+    weight: 1
+  ttl: 1
+
